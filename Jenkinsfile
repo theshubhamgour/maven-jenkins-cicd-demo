@@ -6,17 +6,12 @@ pipeline {
     DOCKERHUB_CREDENTIALS = credentials('DockerHub')
   }
 
-  options {
-    timestamps()
-    ansiColor('xterm')
-  }
-
   stages {
 
     stage('Checkout') {
       steps {
         echo "📦 Checking out code from SCM..."
-        checkout scm
+        check
       }
     }
 
