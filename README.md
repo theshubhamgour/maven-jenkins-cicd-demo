@@ -3,7 +3,7 @@
 A simple **Java Maven project** integrated with **Jenkins CI/CD** and **DockerHub** for demonstrating a full DevOps pipeline — from code build and testing to Docker image deployment.
 
 🎥 **Watch the complete tutorial here:**  
-👉 [YouTube: #theshubhamgour](https://www.youtube.com/@theshubhamgour)
+👉 [YouTube: #theshubhamgour](https://www.youtube.com/shubhamgourtech)
 
 ---
 
@@ -114,7 +114,7 @@ Hello Jenkins!
 ## 📹 YouTube Tutorial
 
 🎬 Learn the entire setup, from Maven to Jenkins pipeline, in this detailed walkthrough:  
-➡️ [YouTube: #theshubhamgour](https://www.youtube.com/@theshubhamgour)
+➡️ [YouTube: #theshubhamgour](https://www.youtube.com/@shubhamgourtech)
 
 ---
 
@@ -124,4 +124,4 @@ This project is licensed under the **MIT License** — free to use, modify, and 
 ---
 
 > 💡 Created with ❤️ by **Shubham Gour**  
-> For DevOps tutorials, follow [#theshubhamgour](https://www.youtube.com/@theshubhamgour)
+> For DevOps tutorials, follow [#theshubhamgour](https://www.youtube.com/@shubhamgourtech)
