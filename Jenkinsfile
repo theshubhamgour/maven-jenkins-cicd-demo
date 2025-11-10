@@ -95,7 +95,7 @@ pipeline {
       steps {
         echo "Deploying Docker container..."
         sh '''
-            docker logs $IMAGE_NAME:${BUILD_NUMBER}
+            docker logs maven-demo
         '''
       }
     }
