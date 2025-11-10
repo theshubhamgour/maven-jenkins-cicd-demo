@@ -95,7 +95,12 @@ pipeline {
       steps {
         echo "🚢 Deploying Docker container..."
         sh '''
-          docker run -d -p 8080:8080 --name maven-demo $IMAGE_NAME:${BUILD_NUMBER}
+          echo "Stopping any existing container..."
+          docker stop maven-demo || true
+          docker rm maven-demo || true
+
+          echo "Starting new container on port 8081..."
+          docker run -d -p 8081:8080 --name maven-demo $IMAGE_NAME:${BUILD_NUMBER}
           sleep 5
           docker ps
         '''
@@ -105,9 +110,17 @@ pipeline {
     stage('Post-Deployment Test') {
       steps {
         echo "⚙️ Verifying container is running..."
-        sh 'curl -s http://localhost:8080 || echo "App started successfully!"'
+        sh '''
+          CONTAINER_ID=$(docker ps -q --filter "name=maven-demo")
+          CONTAINER_IP=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' $CONTAINER_ID)
+
+          echo "Container IP: $CONTAINER_IP"
+          echo "Testing application endpoint..."
+          curl -s http://$CONTAINER_IP:8080 || echo "App started successfully!"
+          '''
       }
-    }
+}
+
 
     stage('Cleanup') {
       steps {
